@@ -1,0 +1,31 @@
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>package</span> com<span style='color:#808030; '>.</span>satyam<span style='color:#808030; '>.</span>internetpermission<span style='color:#800080; '>;</span>
+
+import android<span style='color:#808030; '>.</span>app<span style='color:#808030; '>.</span>Service<span style='color:#800080; '>;</span>
+import android<span style='color:#808030; '>.</span>content<span style='color:#808030; '>.</span>Context<span style='color:#800080; '>;</span>
+import android<span style='color:#808030; '>.</span>net<span style='color:#808030; '>.</span>ConnectivityManager<span style='color:#800080; '>;</span>
+import android<span style='color:#808030; '>.</span>net<span style='color:#808030; '>.</span>NetworkInfo<span style='color:#800080; '>;</span>
+
+
+public <span style='color:#800000; font-weight:bold; '>class</span> Connectivity <span style='color:#696969; '>{</span>
+<span style='color:#696969; '></span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;Context context;</span>
+<span style='color:#696969; '></span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;public Connectivity(Context context) {</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;this.context = context;</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;}</span>
+
+    public <span style='color:#bb7977; '>boolean</span> isConnected<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#696969; '>{</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Service.CONNECTIVITY_SERVICE);</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if(connectivityManager != null){</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;NetworkInfo info = connectivityManager.getActiveNetworkInfo();</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if(info != null){</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if(info.getState() == NetworkInfo.State.CONNECTED){</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return true;</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}</span>
+            }
+        }
+        return <span style='color:#7d0045; '>false</span><span style='color:#800080; '>;</span>
+    }
+}
+</pre>
+<!--Created using ToHtml.com on 2018-12-18 17:27:08 UTC -->
